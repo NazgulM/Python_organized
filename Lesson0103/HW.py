@@ -29,9 +29,9 @@
 # Task 4
 print('\n')
 word = input('Original text: ')
+count = 0
 for i in word:
-    print(word)
-
+    print(2*i, end='')
 
 
 
