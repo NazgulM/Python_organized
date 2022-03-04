@@ -49,11 +49,35 @@ print(f'The average of numbers: {average}')
 # Task 5
 print('\n')
 # Stepan's salary is 70 000, others salary is 50 000
+# listNames = ['Elena', 'Stepan', 'Murat', 'Asan', 'Aisuluu']
+# string1 = ' : receives 50 000 RUB'
+# # string2 = 'receives 70 000 RUB'
+
+        # print(name, ': receives 50 000 RUB')
+        # for name in ['Stepan']:
+        #     print(name, ': receives 70 000 RUB')
+
+for name in ['Elena', 'Stepan', 'Murat', 'Asan', 'Aisuluu']:
+    if name == 'Stepan':
+        print(name, ': receives 70 000 RUB')
+    else:
+        print(name, ': receives 50 000 RUB')
+
+# Task 6
+print('\n')
 listNames = ['Elena', 'Stepan', 'Murat', 'Asan', 'Aisuluu']
+print('List of employees: ', listNames)
 
-for name in listNames:
-
-    print(name)
-
-
+print(input('What name would you like to remove: '))
+listNames.pop(1)
+print('New list after removing: ', listNames)
+print('Do you want to continue?')
+print(input('If you want to continue, click on any button, if not, please enter No: '))
+print()
+print(input('What name would you like to remove: '))
+listNames.pop(2)
+print('New list after removing: ', listNames)
+print('Do you want to continue?')
+print(input('If you want to continue, click on any button, if not, please enter No: '))
+print('Program has ended.We wish you have a nice day!')
 
