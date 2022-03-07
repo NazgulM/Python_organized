@@ -68,16 +68,26 @@ print('\n')
 listNames = ['Elena', 'Stepan', 'Murat', 'Asan', 'Aisuluu']
 print('List of employees: ', listNames)
 
-print(input('What name would you like to remove: '))
-listNames.pop(1)
-print('New list after removing: ', listNames)
-print('Do you want to continue?')
-print(input('If you want to continue, click on any button, if not, please enter No: '))
-print()
-print(input('What name would you like to remove: '))
-listNames.pop(2)
-print('New list after removing: ', listNames)
-print('Do you want to continue?')
-print(input('If you want to continue, click on any button, if not, please enter No: '))
-print('Program has ended.We wish you have a nice day!')
+# print(input('What name would you like to remove: '))
+# listNames.pop(1)
+# print('New list after removing: ', listNames)
+# print('Do you want to continue?')
+# print(input('If you want to continue, click on any button, if not, please enter No: '))
+# print()
+# print(input('What name would you like to remove: '))
+# listNames.pop(2)
+# print('New list after removing: ', listNames)
+# print('Do you want to continue?')
+# print(input('If you want to continue, click on any button, if not, please enter No: '))
+# print('Program has ended.We wish you have a nice day!')
 
+print()
+command = ' '
+while command != 'No':
+    deleteWorker = input('What name would you like to remove? ')
+    listNames.remove(deleteWorker)
+    print('New list after removing: ', listNames)
+    command = input('If you want to continue, click on any button, if not, please enter \"No\": ')
+
+    if command == 'No':
+        print('Program has ended.We wish you have a nice day!')
