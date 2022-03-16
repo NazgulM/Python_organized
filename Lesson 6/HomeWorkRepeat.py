@@ -89,13 +89,81 @@ print('0 - Выход из Программы')
 print('Good day, dear User')
 print('Please enter the number from this menu, to get access to the functionality you need!')
 
-print()
-# choice = ''
-# while choice != 0:
-choice = int(input('Your choice please: '))
-for key in myWorkerDict:
+# print(myWorkerDict)
+
+# for key, value in myWorkerDict.items():
+#     print(key, value)
+choice = ''
+while choice != 0:
+    choice = int(input('Your choice please: '))
     if choice == 1:
         print('You choose:  Поиск сотрудника')
         name = (input('Please input the name of employee for searching: '))
-        print(myWorkerDict.get(name))
-
+        print(myWorkerDict['Employee 1'])
+    if choice == 2:
+        print('You choose option: "Adding new Employee" ')
+        print('For adding info about new employee, please add following information: ')
+        myWorkerDict['Employee 6'] = {}
+        fullName = input('Please input full name of new employee: ')
+        myWorkerDict['Employee 6']['Full name'] = fullName
+        age = int(input('Please input age: '))
+        myWorkerDict['Employee 6']['Age'] = age
+        occupation = input('Please enter the occupation: ')
+        myWorkerDict['Employee 6']['Occupation'] = occupation
+        salary = int(input('Please input the salary: '))
+        myWorkerDict['Employee 6']['Salary'] = salary
+        spouseName = input('Please enter the full name of spouse: ')
+        myWorkerDict['Employee 6']['Full name of spouse'] = spouseName
+        children = int(input('Please enter the number of children: '))
+        myWorkerDict['Employee 6']['Children'] = children
+        kid = input('Please enter name of a kid: ')
+        myWorkerDict['Employee 6']['Children'] = {'Kid 1': kid}
+        transport = input('Please enter the type and model of your transport:  ')
+        myWorkerDict['Employee 6']['Transport'] = transport
+        address = input('Please enter the address: ')
+        myWorkerDict['Employee 6']['Living address'] = address
+        print(myWorkerDict['Employee 6'])
+    if choice == 3:
+        print('You choose option: "Delete of employee"')
+        print(input('Please enter employee name for deletion the collection >>> '))
+        print('Employee with name Adilet Eshmamatov was deleted')
+        del myWorkerDict['Employee 1']
+        print('Now collection with employees looks like that: ', myWorkerDict)
+    if choice == 4:
+        print('You choose: "Create a list to reward employees"')
+        n = int(input('How many person will be rewarded?: >>> '))
+        list1 = []
+        for i in range(n):
+            element = input('Please enter name of employee No.1 to reward: >>> ')
+            list1.append(element)
+            element2 = input('Please enter name of employee No.2 to reward: >>> ')
+            list1.append(element2)
+            element3 = input('Please enter name of employee No.3 to reward: >>> ')
+            list1.append(element3)
+            if element and element2 and element3 not in myWorkerDict.values():
+                print('This employee does not exist')
+            print('Here is the list of employees to reward: ', list1)
+            break
+    if choice == 5:
+        print('You choose: "Create a list of employees to reward (set)"')
+        s = int(input('How many person will be rewarded?: >>> '))
+        set1 = set()
+        for j in range(s):
+            person1 = input('Please enter name of employee No.1 to reward: >>> ')
+            set1.add(person1)
+            person2 = input('Please enter name of employee No.2 to reward: >>> ')
+            set1.add(person2)
+            person3 = input('Please enter name of employee No.3 to reward: >>> ')
+            set1.add(person3)
+            if person1 or person2 or person3 not in myWorkerDict.values():
+                print('This employee does not exist in the system.')
+            print('Here is the list of employees to reward: ', set1)
+            break
+    if choice == 6:
+        print('You choose: Increasing salary for employee')
+        empIncr = input('Please enter name of employee, to whom you are going to increase salary: ')
+        print('The employee ', empIncr, 'has a salary of ', myWorkerDict['Employee 5']['Salary'])
+        salIncr = int(input('How much do you want to raise salary?: '))
+        myWorkerDict['Employee 5']['Salary'] += salIncr
+        print('Updated salary of ', empIncr, 'is: ',  myWorkerDict['Employee 5']['Salary'])
+        print('Updated collection of the employees now looks like: ', myWorkerDict)
