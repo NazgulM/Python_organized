@@ -1,4 +1,6 @@
 # Task 1
+import operator
+
 myWorkerDict = {
     'Employee 1':
         {
@@ -165,5 +167,19 @@ while choice != 0:
         print('The employee ', empIncr, 'has a salary of ', myWorkerDict['Employee 5']['Salary'])
         salIncr = int(input('How much do you want to raise salary?: '))
         myWorkerDict['Employee 5']['Salary'] += salIncr
-        print('Updated salary of ', empIncr, 'is: ',  myWorkerDict['Employee 5']['Salary'])
+        print('Updated salary of ', empIncr, 'is: ', myWorkerDict['Employee 5']['Salary'])
         print('Updated collection of the employees now looks like: ', myWorkerDict)
+    if choice == 7:
+        print('You choose decreasing the salary for employee')
+        empDec = input('Please enter name of employee, to whom you are going to decrease salary: ')
+        salDecr = int(input('How much do you want to raise salary?: '))
+        myWorkerDict['Employee 2']['Salary'] -= salDecr
+        print('Updated salary of', empDec, 'is: ', myWorkerDict['Employee 2']['Salary'])
+        print('Updated collection of the employees now looks like: ', myWorkerDict)
+    if choice == 8:
+        print('You choose: "Display employee name, receiving the maximum of salary"')
+        list1 = list(myWorkerDict.values())
+        print(list1)
+
+
+
