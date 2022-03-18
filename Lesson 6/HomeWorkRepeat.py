@@ -1,5 +1,4 @@
 # Task 1
-import operator
 
 myWorkerDict = {
     'Employee 1':
@@ -178,8 +177,58 @@ while choice != 0:
         print('Updated collection of the employees now looks like: ', myWorkerDict)
     if choice == 8:
         print('You choose: "Display employee name, receiving the maximum of salary"')
-        list1 = list(myWorkerDict.values())
-        print(list1)
-
-
+        list1 = [myWorkerDict['Employee 1']['Salary'], myWorkerDict['Employee 2']['Salary'],
+                 myWorkerDict['Employee 3']['Salary'], myWorkerDict['Employee 4']['Salary'],
+                 myWorkerDict['Employee 5']['Salary']]
+        # list1 = list(map(int, str(list1)))
+        print('The name of the employee, that receives max salary: ', myWorkerDict['Employee 5']['Full name'],
+              'and his salary is: ', max(list1), ' RUB')
+    if choice == 9:
+        print('You choose: "Display employee name, receiving the minimum of salary"')
+        list2 = [myWorkerDict['Employee 1']['Salary'], myWorkerDict['Employee 2']['Salary'],
+                 myWorkerDict['Employee 3']['Salary'], myWorkerDict['Employee 4']['Salary'],
+                 myWorkerDict['Employee 5']['Salary']]
+        print('The name of the employee, that receives min salary: ', myWorkerDict['Employee 1']['Full name'],
+              'and his salary is: ', min(list2), ' RUB')
+    if choice == 10:
+        print('You choose: "Calculate of the average monthly salary of employees"')
+        list3 = [myWorkerDict['Employee 1']['Salary'], myWorkerDict['Employee 2']['Salary'],
+                 myWorkerDict['Employee 3']['Salary'], myWorkerDict['Employee 4']['Salary'],
+                 myWorkerDict['Employee 5']['Salary']]
+        average_salary = sum(list3)/len(list3)
+        print('Average sum of employees salary: ', average_salary)
+    if choice == 11:
+        print('You choose: Total salary of all employees')
+        list4 = [myWorkerDict['Employee 1']['Salary'], myWorkerDict['Employee 2']['Salary'],
+                 myWorkerDict['Employee 3']['Salary'], myWorkerDict['Employee 4']['Salary'],
+                 myWorkerDict['Employee 5']['Salary']]
+        sumSalary = sum(list4)
+        print('Total sum  of all employees salary: ', sumSalary)
+    if choice == 12:
+        print('You choose: "Type of transport of all employees"')
+        list5 = [myWorkerDict['Employee 1']['Transport'], myWorkerDict['Employee 2']['Transport'],
+                 myWorkerDict['Employee 3']['Transport'], myWorkerDict['Employee 4']['Transport'],
+                 myWorkerDict['Employee 5']['Transport']]
+        for index, car in enumerate(list5, 1):
+            if 'Walking' not in car:
+                print(f'{index} transport is: {car}')
+    if choice == 13:
+        print('You choose: "Display the names and number of children of all employees"')
+        list6 = [myWorkerDict['Employee 1']['Children']['Kid 1'],
+                 myWorkerDict['Employee 1']['Children']['Kid 2'],
+                 myWorkerDict['Employee 2']['Children']['Kid 1'],
+                 myWorkerDict['Employee 3']['Children']['Kid 1'],
+                 myWorkerDict['Employee 3']['Children']['Kid 2'],
+                 myWorkerDict['Employee 3']['Children']['Kid 3'],
+                 myWorkerDict['Employee 4']['Children']['Kid 1'],
+                 myWorkerDict['Employee 5']['Children']['Kid 1'],
+                 myWorkerDict['Employee 5']['Children']['Kid 2'],
+                 myWorkerDict['Employee 5']['Children']['Kid 3'],
+                 myWorkerDict['Employee 5']['Children']['Kid 4']]
+        print(list6)
+        print('Total number of children of the employees: ', len(list6), ' kids')
+        for index, kid in enumerate(list6, 1):
+            print(f'{index} kid : {kid}')
+    if choice == 0:
+        print('You have completed the program. See you soon!')
 
