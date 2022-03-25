@@ -1,3 +1,4 @@
+
 # String methods of collection
 # Method split () - Разделение на подстроки
 text = 'I love programming and its cool'
