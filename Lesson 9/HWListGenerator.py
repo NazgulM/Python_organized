@@ -33,5 +33,5 @@ print('List with consonants', list1)
 list2 = [2, 3, 4, 5]
 list3 = [20, 41, 28, 56]
 
-list4 = [b / a for a, b in zip(list2, list3) if b % a == 0]
+list4 = [True if b % a == 0 else False for a, b in zip(list2, list3) ]
 print(list4)

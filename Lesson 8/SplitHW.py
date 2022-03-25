@@ -80,4 +80,4 @@ print(f'After one year and two days would be: {oneyear_twodays}')
 
 print()
 threeMonthThreeDay = now + timedelta(days=93)
-print(f'After trhee months and three days from now: {threeMonthThreeDay}')
+print(f'After three months and three days from now: {threeMonthThreeDay}')
