@@ -18,40 +18,40 @@ def mathOperation(n1, n2, n3, operation):
 
 
 def main():
-    # sayHello = lambda: print('Hello my dear friend!')
-    #
-    # sayHello()
-    # sayHello()
-    #
-    # helloSay()
-    #
-    # sayHello2 = lambda name: print(f'Hello {name}!')
-    # sayHello2('Samat')
-    #
-    # addThreeNums = lambda n1, n2, n3: n1 + n2 + n3
-    #
-    # print(addThreeNums(34, 54, 65))
-    #
-    # result = 100 + addThreeNums(34, 54, 65)
-    # print(result)
-    #
-    # print(addNumsThree(23, 43, 65))
-    #
-    # findAvg = lambda listMy: sum(listMy) / len(listMy)
-    #
-    # print(findAvg([34, 54, 65, 76, 76]))
-    #
-    # # 1 - Finding avg among three nums
-    # avgResult = mathOperation(12, 43, 54, lambda num1, num2, num3: (num1 + num2 + num3) / 3)
-    # print(avgResult)
-    #
-    # # 2 - Finding sum among three nums
-    # sumThreeNUms = mathOperation(34, 435, 65, addThreeNums)
-    # print(sumThreeNUms)
-    #
-    # # 3 - Finding multiply among three nums
-    # multiplyResult = mathOperation(23, 43, 54, lambda num1, num2, num3: num1 * num2 * num3)
-    # print(multiplyResult)
+    sayHello = lambda: print('Hello my dear friend!')
+
+    sayHello()
+    sayHello()
+
+    helloSay()
+
+    sayHello2 = lambda name: print(f'Hello {name}!')
+    sayHello2('Samat')
+
+    addThreeNums = lambda n1, n2, n3: n1 + n2 + n3
+
+    print(addThreeNums(34, 54, 65))
+
+    result = 100 + addThreeNums(34, 54, 65)
+    print(result)
+
+    print(addNumsThree(23, 43, 65))
+
+    findAvg = lambda listMy: sum(listMy) / len(listMy)
+
+    print(findAvg([34, 54, 65, 76, 76]))
+
+    # 1 - Finding avg among three nums
+    avgResult = mathOperation(12, 43, 54, lambda num1, num2, num3: (num1 + num2 + num3) / 3)
+    print(avgResult)
+
+    # 2 - Finding sum among three nums
+    sumThreeNUms = mathOperation(34, 435, 65, addThreeNums)
+    print(sumThreeNUms)
+
+    # 3 - Finding multiply among three nums
+    multiplyResult = mathOperation(23, 43, 54, lambda num1, num2, num3: num1 * num2 * num3)
+    print(multiplyResult)
 
     # task 2
     # Создать лямбда выражение, которая возводит в квадрат переданное ей число
@@ -96,3 +96,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+newList = [i**2 for i in range(1,10)]
+print(newList)
