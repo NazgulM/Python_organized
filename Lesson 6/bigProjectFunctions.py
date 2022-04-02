@@ -1,12 +1,58 @@
 def searchWorker(nameSearch):
-    if nameSearch in myWorkerDict.items():
-        return nameSearch
+    for worker, workerDict in myWorkerDict.items():
+        for key, valueWorker in workerDict.items():
+            if valueWorker == nameSearch:
+                for key, valueWorker in workerDict.items():
+                    print(key, valueWorker)
 
 
-    # for worker, workerDict in myWorkerDict.items():
-    #         if workerDict == nameSearch:
-    #                 return workerDict
-    #                 print(searchWorker(nameSearch))
+def addingWorker(nameInput, age, typeWork, salary, fioWifeHusb, child, nameOfTransport, address, countWorkerKey):
+    myWorkerDict[countWorkerKey] = {"ФИО": nameInput,
+                                    "Возраст": age,
+                                    "Род деятельности": typeWork,
+                                    "Заработная плата": salary,
+                                    "ФИО Супруга/и": fioWifeHusb,
+                                    "Дети": child,
+                                    "Транспорт": nameOfTransport,
+                                    "Адрес проживания": address
+                                    }
+
+
+def showWorkers():
+    workerNameList = list()
+
+    if len(myWorkerDict) != 0:
+        for worker, workerDict in myWorkerDict.items():
+            print("===================")
+            print(f'{worker}:\n'
+                  f'===================')
+            for key, values in workerDict.items():
+                if key == "Дети":
+                    workerNameList = workerDict["ФИО"].split(" ")
+                    print(f'Дети {workerNameList[0]}а {workerNameList[0]}а : '
+                          f'\n************************')
+
+                    for child, childInfo in values.items():
+                        print(f'{child}: {childInfo}')
+                    print('************************')
+                if key == "Дети":
+                    continue
+                print(f'{key}: {values}')
+    else:
+        print('База сотрудников пуста!')
+
+
+def delWorker(nameWorker):
+    valDelete = None
+    for worker, workerDict in myWorkerDict.items():
+        for k, v in workerDict.items():
+            if nameWorker in workerDict.values():
+                valDelete = worker
+
+    del myWorkerDict[valDelete]
+
+    print(delWorker(nameWorker))
+
 
 myWorkerDict = {
     "Сотрудник 1":
@@ -108,12 +154,10 @@ while option != 0:
 
     if option == 1:
         nameSearch = input('Вы выбрали меню №1.\nНапишите имя для поиска: ')
-
-
+        searchWorker(nameSearch)
     elif option == 2:
         nameInput = input('Вы выбрали меню №2.'
                           '\nНапишите ФИО Сотрудника для добавления: ')
-
         age = int(input('Возраст: '))
         typeWork = input('Род деятельности: ')
         salary = int(input('Напишите зарплату: '))
@@ -131,65 +175,19 @@ while option != 0:
 
         countWorker = len(myWorkerDict) + 1
         countWorkerKey = 'Сотрудник ' + str(countWorker)
-        myWorkerDict[countWorkerKey] = {"ФИО": nameInput,
-                                        "Возраст": age,
-                                        "Род деятельности": typeWork,
-                                        "Заработная плата": salary,
-                                        "ФИО Супруга/и": fioWifeHusb,
-                                        "Дети": child,
-                                        "Транспорт": nameOfTransport,
-                                        "Адрес проживания": address
-                                        }
+        addingWorker(nameInput, age, typeWork, salary, fioWifeHusb, child, nameOfTransport, address, countWorkerKey)
 
         print('Новый словарь работников теперь выглядит так:')
 
-        for worker, workerDict in myWorkerDict.items():
-            print("===================")
-            print(f'{worker}:\n'
-                  f'===================')
-            for key, values in workerDict.items():
-                if key == "Дети":
-                    workerNameList = workerDict["ФИО"].split(" ")
-                    print(f'Дети {workerNameList[0]}а {workerNameList[1]}а : '
-                          f'\n************************')
+        showWorkers()
 
-                    for child, childInfo in values.items():
-                        print(f'{child}: {childInfo}')
-                    print('************************')
-                if key == "Дети":
-                    continue
-                print(f'{key}: {values}')
     elif option == 3:
-        nameDelete = input('Вы выбрали меню "Удаление сотрудника"\n'
+        nameWorker = input('Вы выбрали меню "Удаление сотрудника"\n'
                            'Напишите имя сотрудника для удаления: ')
-        valDelete = None
-        for worker, workerDict in myWorkerDict.items():
-            for k, v in workerDict.items():
-                if nameDelete in workerDict.values():
-                    valDelete = worker
-
-        del myWorkerDict[valDelete]
 
         print('\nНовый словарь работников теперь выглядит так:')
-        if len(myWorkerDict) != 0:
-            for worker, workerDict in myWorkerDict.items():
-                print("===================")
-                print(f'{worker}:\n'
-                      f'===================')
-                for key, values in workerDict.items():
-                    if key == "Дети":
-                        workerNameList = workerDict["ФИО"].split(" ")
-                        print(f'Дети {workerNameList[0]}а {workerNameList[1]}а : '
-                              f'\n************************')
 
-                        for child, childInfo in values.items():
-                            print(f'{child}: {childInfo}')
-                        print('************************')
-                    if key == "Дети":
-                        continue
-                    print(f'{key}: {values}')
-        else:
-            print('База сотрудников пуста!')
+
     elif option == 4:
         listWorkerAwarded = []
         cannotFindAwarded = []
