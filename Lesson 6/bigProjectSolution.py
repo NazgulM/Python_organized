@@ -145,7 +145,7 @@ while option != 0:
             for key, values in workerDict.items():
                 if key == "Дети":
                     workerNameList = workerDict["ФИО"].split(" ")
-                    print(f'Дети {workerNameList[0]}а {workerNameList[1]}а : '
+                    print(f'Дети {workerNameList[0]}а {workerNameList[0]}а : '
                           f'\n************************')
 
                     for child, childInfo in values.items():
