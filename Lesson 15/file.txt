@@ -1,0 +1,4 @@
+Name: Naza, 
+your age: 36, 
+address: NY 
+salary : 100000

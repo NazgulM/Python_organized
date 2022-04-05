@@ -1,0 +1,1 @@
+Import the Lobster font to your web page. Then, use an element selector to set Lobster as the font-family for your h2 element.
