@@ -39,13 +39,17 @@ for info1, info2, info3, info4, info5, info6, info7, info8 in cells:
     print(info1.value, info2.value, info3.value, info4.value, info5.value, info6.value, info7.value, info8.value)
 
 # 7. Сделайте перебор данных установив лимит в 5 рядов из myListExcel
-print((cells[:6]))
-list1 = list(cells[:6])
-print(list1)
-print(type(list1))
-print(len(list1[0]))
-print(list1[:6])
+# print((cells[:6]))
+# list1 = list(cells[:6])
+# print(list1)
+# print(type(list1))
+# print(len(list1[0]))
+# print(list1[:6])
+for data in list(cells[0][:6]):
+    print(data.value, end=' ')
 
+myTuple = ((2, 32, 4),)
+print(list(myTuple[0]))
 '''
 
 8. Попросить вести пользователя следующие данные, как в след. примере:
