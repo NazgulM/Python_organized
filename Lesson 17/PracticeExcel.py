@@ -40,11 +40,21 @@ listExcel = []
 for row in cells2:
     for data in row:
         listExcel.append(data.value)
-    # print(listExcel, end=' ')
-    # print(end='\n')
-listExcel2 = listExcel[1:]
+        listExcel2 = listExcel[1:]
 print(listExcel2, end=' ')
 print(end='\n')
+# print(listExcel, end=' ')
+# print(end='\n')
+print()
+# second part
+cells3 = sheetName['B12':'G28']
+cells3 = sheetName.iter_rows(min_row=12, min_col=2, max_col=6, max_row=28)
+list1 = []
+for row in cells3:
+    for data in row:
+        list1.append(data.value)
+        print(list1, end=' ')
+    print(end='\n')
 
 print()
 
