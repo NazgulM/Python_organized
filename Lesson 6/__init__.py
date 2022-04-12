@@ -9,7 +9,7 @@
 # # print('Вам {0} лет, название вашей компании {1} и адресс вашего проживания: {2}'.format(age, workerCompany, address))
 # # print('Внимание  человек с именем {n} мы отправляемся по адресу {adr}. Повторяю  мы отправляемся по адресу {adr}'.format(n = name, adr = address))
 #
-# # Lesson 2
+# # Lesson 2 - Nested Lists
 # str = 'hello world'
 # str1 = 'HI DEAR'
 # print(str.upper())
