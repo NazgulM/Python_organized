@@ -1,7 +1,7 @@
 import openpyxl
 from openpyxl import load_workbook
 
-book = openpyxl.open('food.xlsx', read_only=True)
+book = openpyxl.open('../Lesson 18/food.xlsx', read_only=True)
 sheet = book.active
 
 print(sheet['B2'].value)
@@ -23,7 +23,7 @@ for region, city in cells:
 #     print(date, region, city, category, product, quantity, unit,totalPrice)
 
 
-wb = load_workbook('food.xlsx')
+wb = load_workbook('../Lesson 18/food.xlsx')
 ws = wb.active
 # print(ws)
 # print()
