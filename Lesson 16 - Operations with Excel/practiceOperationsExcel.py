@@ -2,7 +2,7 @@ import openpyxl
 from openpyxl import load_workbook, Workbook
 from openpyxl.styles import *
 
-wb = load_workbook('../Lesson 18/food.xlsx')
+wb = load_workbook('../Lesson 18 - Repeat File Excel/food.xlsx')
 sheet = wb.active
 print("Успешно!")
 # Прочтите файл excel
