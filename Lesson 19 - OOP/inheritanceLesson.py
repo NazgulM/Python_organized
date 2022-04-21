@@ -29,17 +29,21 @@ class Tiger(Animal):
         self.tail_l = lengh_tail
 
     def display(self):
-        print(f'Еда: {self.foodType}'
-              f'\nСреда обитания: {self.areliving}'
-              f'\nТип животного: {self.animalType}'
-              f'\nДлина хвоста тигра: {self.tail_l}')
+        # print(f'Еда: {self.foodType}'
+        #       f'\nСреда обитания: {self.areliving}'
+        #       f'\nТип животного: {self.animalType}'
+        #       f'\nДлина хвоста тигра: {self.tail_l}')
+
+        super().display()
+        print(f'Длина хвоста тигра: {self.tail_l}')
 
     def canHunting(self):
         print('Тигр умеет охотиться и самое жестокое животное и он хищник')
 
 class Monkey(Animal):
     def __init__(self, typeanimal, typefood, livingarea, len_hand, quant_teeth):
-        Animal.__init__(self,typeanimal, typefood, livingarea)
+        #Animal.__init__(self,typeanimal, typefood, livingarea)
+        super().__init__(typeanimal, typefood, livingarea)
         self.len_hand = len_hand
         self.teethQuant = quant_teeth
 
@@ -47,22 +51,50 @@ class Monkey(Animal):
         print('Обезьяна умеет лазить по деревьям и он травоядное животное')
 
     def display(self):
-        print(f'Еда: {self.foodType}'
-              f'\nСреда обитания: {self.areliving}'
-              f'\nТип животного: {self.animalType}'
-              f'\nДлина руки: {self.len_hand}'
+        # print(f'Еда: {self.foodType}'
+        #       f'\nСреда обитания: {self.areliving}'
+        #       f'\nТип животного: {self.animalType}'
+        #       f'\nДлина руки: {self.len_hand}'
+        #       f'\nКоличество зубов: {self.teethQuant}')
+
+        super().display()
+        print(f'Длина руки: {self.len_hand}'
               f'\nКоличество зубов: {self.teethQuant}')
 
+class Shimpanze(Monkey):
+    def __init__(self,typeanimal, typefood, livingarea, len_hand, quant_teeth, type_hand):
+        super().__init__(typeanimal, typefood, livingarea, len_hand, quant_teeth)
+        self.handType = type_hand
+
+    def smart(self):
+        print('Shimpanze is smarter than other monkeys')
+
+    def display(self):
+        super().display()
+        print(f'Тип руки у Шимпанзе: {self.handType}')
+
+
+
 #Множественное наследование
-class Parrot(Animal, Mind):
+class Parrot(Mind, Animal):
     def __init__(self,typeanimal, typefood, livingarea, typeWord, color):
         Animal.__init__(self, typeanimal, typefood, livingarea)
-        Mind.__init__(self, typeWord)
+        #super().__init__(typeanimal, typefood, livingarea)
+        super().__init__(typeWord)
+        #Mind.__init__(self, typeWord)
         self.coloranimal = color
 
     def canFly(self):
         print(f'Это попугай и он умеет летать!'
               f'\n и его цвет {self.coloranimal}')
+
+    def display(self):
+        #Animal.display(self)
+        super().display()
+        super().canSpeak()
+        print(f'Это попугай и он умеет летать!'
+              f'\n и его цвет {self.coloranimal}')
+
 
 def main():
     tiger1 = Tiger('Бельгийский тигр','мясо', 'савана', 12)
@@ -91,6 +123,14 @@ def main():
     tiger1.display()
     print('*' * 10)
     parrot1.display()
+    print('*' * 10)
+
+    shimpanze1 = Shimpanze('Шимпанзе', 'банан', 'джунгли', 32, 28, 'like human hand')
+    shimpanze1.display()
+    shimpanze1.sleep()
+    shimpanze1.canClimbTree()
+    shimpanze1.smart()
+
 
 if __name__=='__main__':
     main()

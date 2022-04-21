@@ -71,14 +71,11 @@ class DrawingTeacher(Teacher):
 
 
 class MathTeacher(Teacher):
-    def __init__(self, name, experience, subject, numberStud, number1, number2, number3):
+    def __init__(self, name, experience, subject, numberStud):
         Teacher.__init__(self, name, experience, subject, numberStud)
-        self.number1 = number1
-        self.number2 = number2
-        self.number3 = number3
 
     def findAverage(self, number1, number2, number3):
-        avg = (self.number1 + self.number2 + self.number3) / 3
+        avg = (number1 + number2 + number3) / 3
         print('The average number is: ', avg)
 
     def displayInfo(self):
@@ -113,12 +110,12 @@ def main():
     drawTeacher.displayInfo()
     print('******************************')
 
-    mathTeacher = MathTeacher('Akyl Kanatova', 35, 'mathematics', 80, 45, 60, 20)
+    mathTeacher = MathTeacher('Akyl Kanatova', 35, 'mathematics', 80)
     mathTeacher.findAverage(45, 60, 20)
     mathTeacher.displayInfo()
     print('******************************')
 
-    mathgeoTeacher = MathGeographyTeacher('Dinara Oshurahunova', 25,'math and geography', 45)
+    mathgeoTeacher = MathGeographyTeacher('Dinara Oshurahunova', 25, 'math and geography', 45)
     mathgeoTeacher.introducing()
     print('******************************')
     mathgeoTeacher.displayInfo()
