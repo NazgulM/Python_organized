@@ -137,20 +137,26 @@ class Soda:
 """
 
 
-class TriangleChecker():
-    def __init__(self, num):
-        self.num = num
+class TriangleChecker:
+    def __init__(self, sides):
+        self.sides = sides
 
     def is_triangle(self):
 
-        if len(self.num) >= 0:
-            print('Woohoo, we can create a triangle')
-        elif len(self.num) < 0:
-            print('Nothing will work with negative numbers!')
-        elif type(self.num) == str:
-            print('You only need to enter numbers!')
-        else:
-            print('Unfortunately, but you cannot make a triangle out of this')
+        try:
+            for side in self.sides:
+                if side > 0:
+                    sorted_sides = list(sorted(self.sides))
+                    if sorted_sides[0] + sorted_sides[1] > sorted_sides[2]:
+                        return 'We can create Triangle'
+                    return 'Unfortunately, we cannot create from these numbers a triangle'
+                elif side < 0:
+                    return 'With negative numbers cannot create the triangle'
+        except Exception:
+            return 'You cannot use strings'
+
+
+
 
 
 """
@@ -195,9 +201,9 @@ class Horse:
 
 
 class Mul(Donkey, Horse):
-    def __init__(self,name,age,living_area,typeDonkey, typeHorse, breed):
-        Donkey.__init__(self,name,age,living_area,typeDonkey)
-        Horse.__init__(self,name,age,typeHorse, breed)
+    def __init__(self, name, age, living_area, typeDonkey, typeHorse, breed):
+        Donkey.__init__(self, name, age, living_area, typeDonkey)
+        Horse.__init__(self, name, age, typeHorse, breed)
 
     def display(self):
         super().display()
@@ -205,8 +211,6 @@ class Mul(Donkey, Horse):
 
     def eating(self):
         print('Mule can eat a lot of grass')
-
-
 
 
 def main():
@@ -298,10 +302,9 @@ def main():
     horse1.horse_race()
     print('*************************************')
 
-    mul1 = Mul('Jerry', 15, 'Central America', 'Hinny','female', 'Arabian')
+    mul1 = Mul('Jerry', 15, 'Central America', 'Hinny', 'female', 'Arabian')
     mul1.display()
     mul1.eating()
-
 
 
 if __name__ == '__main__':
