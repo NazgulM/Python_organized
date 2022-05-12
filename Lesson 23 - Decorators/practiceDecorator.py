@@ -28,6 +28,8 @@ def underline(text):
 @bold
 @italic
 @underline
+
+
 def display():
     print('text')
 
