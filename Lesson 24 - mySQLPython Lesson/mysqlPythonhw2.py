@@ -34,17 +34,21 @@ def showOrderByDate():
 
 
 def insertOrder():
-    cust_id = int(input('Please enter the customer id started from 30: '))
-    salesman_id = int(input('Please enter salesman id started from 5004: '))
-    purch_amount = float(input('Please enter purchase amount: '))
-    ord_date = input('Please enter the date')
-    delivery = input('Please enter Delivery cost is 30$: ')
-    sqlInsert = f"""
-        INSERT INTO Orders_prod (customer_id, salesman_id, purch_amount, ord_date, delivery) 
-        VALUES (%s, %s, %s, %s, %s);
-        """
+    limit = int(input('How many orders you want to add? '))
 
-    mycursor.execute(sqlInsert, (cust_id, salesman_id, purch_amount, ord_date, delivery))
+    for i in range(limit):
+        cust_id = int(input('Please enter the customer id started from 30: '))
+        salesman_id = int(input('Please enter salesman id started from 5004: '))
+        purch_amount = float(input('Please enter purchase amount: '))
+        ord_date = input('Please enter the date')
+        delivery = input('Please enter Delivery cost is 30$: ')
+
+        sqlInsert = f"""
+                INSERT INTO Orders_prod (customer_id, salesman_id, purch_amount, ord_date, delivery) 
+                VALUES (%s, %s, %s, %s, %s);
+                """
+
+        mycursor.execute(sqlInsert, (cust_id, salesman_id, purch_amount, ord_date, delivery))
     mysqldb_info.commit()
     print('Successfully inserted!')
 
@@ -98,7 +102,6 @@ def main():
         updateOrderById()
     elif choiceMenu == 5:
         deleteOrder()
-
 
 
 if __name__ == '__main__':
