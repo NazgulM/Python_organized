@@ -30,13 +30,43 @@ def showInfoFromView(viewName):
         print(f'Customer id: {i[1]}')
         print(f'Max order: {i[3]}')
 
+def showFromJoin():
+    sqlScript = f"""
+    SELECT  op.ord_no, op.customer_id, op.salesman_id, op.purch_amount ,chw.cust_name, op.ord_date, chw.city 
+    FROM Orders_prod as op
+    INNER JOIN customer as chw using(customer_id)
+    INNER JOIN salesman as shw on shw.salesman_id = op.salesman_id;
+    """
+
+    mycursor.execute(sqlScript)
+
+    result = mycursor.fetchall()
+    for numb, i in enumerate(result,1):
+        ord_no, customer_id, salesman_id, purch_amount,\
+        cust_name,date_purch, city = i
+
+        #purch_date = datetime.strptime(date_purch, "%d, %B, %Y")
+        purch_date = date_purch.strftime("%d-th of %B %Y ")
+
+        print(f'Order number: {numb}')
+        print('-'*30)
+        print(f'Order number:{ord_no}'
+              f'\nCustomer id: {customer_id}'
+              f'\nSalesman id: {salesman_id}'
+              f'\nPurchase amount: {purch_amount}'
+              f'\nCustomer name: {cust_name}'
+              f'\nCity: {city}'
+              f'\nPurhased date: {purch_date}')
+        print('='*30)
+
 
 
 def main():
     viewName = input('Enter view name: ')
 
     # createView(viewName)
-    showInfoFromView(viewName)
+    # showInfoFromView(viewName)
+    showFromJoin()
 
 
 if __name__ == '__main__':
