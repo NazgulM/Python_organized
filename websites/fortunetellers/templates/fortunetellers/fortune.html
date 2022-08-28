@@ -10,9 +10,10 @@
 </head>
 <body>
 
- <h1>Here is your fortune:</h1>
+{% extends "fortunetellers/base.html" %}
 
+{% block content %}
  <p>{{ fortune }}</p>
-
+{% endblock %}}
 </body>
 </html>
