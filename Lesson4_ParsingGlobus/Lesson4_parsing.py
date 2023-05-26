@@ -94,5 +94,4 @@ excel_document_google = \
 excel_document_google.SetContentFile(file_excel)
 excel_document_google.Upload()
 print('File uploaded to Google Drive')
-# 813792313796-rnof6o93v43s3u4lnu9bg139t2a8lmvd.apps.googleusercontent.com - client ID
-# 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 - client secret
+
